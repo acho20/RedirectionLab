@@ -5,7 +5,7 @@ public class MakeStars{
     Scanner scan = new Scanner(System.in);
     Scanner scan2;
     int x = 0;
-    while (true){
+    while (scan.hasNext()){
       scan2 = new Scanner(scan.nextLine());
       while (scan2.hasNext()){
         x = scan2.next().length();

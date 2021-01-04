@@ -18,7 +18,7 @@ public class PigLatin{
     s = s.toLowerCase();
     String[] dictionary = {"bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"};
     List<String> dic2 = Arrays.asList(dictionary);
-    if(dic2.contains(s.substring(0,2))){
+    if(s.length() >= 2 && dic2.contains(s.substring(0,2))){
       s += s.substring(0,2);
       s = s.substring(2);
       s += "ay";
@@ -27,12 +27,13 @@ public class PigLatin{
     }else{
       s += s.charAt(0);
       s = s.substring(1);
+      s += "ay";
     }
     return s;
   }
 
   public static String pigLatinBest(String s){
-    if(Character.isLetter(s.charAt(0))){
+    if(!Character.isLetter(s.charAt(0))){
       return s;
     }
     if(!(Character.isLetter(s.charAt( s.length() - 1)) || Character.isDigit(s.charAt(s.length() - 1)))){
@@ -49,7 +50,7 @@ public class PigLatin{
     while (scan.hasNext()){
       scan2 = new Scanner(scan.nextLine());
       while (scan2.hasNext()){
-        System.out.print(pigLatinBest(scan2.next()));
+        System.out.print(pigLatinBest(scan2.next()) + " ");
       }
       System.out.println();
     }

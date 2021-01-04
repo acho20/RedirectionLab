@@ -42,4 +42,17 @@ public class PigLatin{
     }
   }
 
+  public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    Scanner scan2;
+    int x = 0;
+    while (scan.hasNext()){
+      scan2 = new Scanner(scan.nextLine());
+      while (scan2.hasNext()){
+        System.out.print(pigLatinBest(scan2.next()));
+      }
+      System.out.println();
+    }
+  }
+
 }
